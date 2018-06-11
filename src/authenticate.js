@@ -1,5 +1,5 @@
 
-import * as {$} from 'jquery';
+//import * as {$} from 'jquery';
 
 function display() {
     var obj = {};

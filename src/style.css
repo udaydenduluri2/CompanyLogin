@@ -20,8 +20,8 @@ header h1 a {
 
 #header {
     position: relative;
-    width: 22%;
-    height: 30%;
+    width: 30%;
+    height: 40%;
     border: 1px solid grey;
     padding: 25px;
     margin: 25px;
@@ -55,6 +55,11 @@ header h1 a {
 #header form label {
     display: inline-block;
     margin: 0 2px;
+    
+}
+
+#header #loginForm {
+    position: absolute;
     
 }
 
