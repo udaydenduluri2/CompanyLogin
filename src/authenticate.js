@@ -17,9 +17,17 @@ function displayWithAjax() {
         dataType: 'json',
         success: function (data) {
             console.log(data);
+            if(data.ValidUser === true && data.Reason === "Validated"){
+            window.location.href = "/myPage.html"
+            }
+            else {
+                $("#errorMsgText").text("Invalid user name or password");
+            }    
+            
         },
         error: function () {
             alert("error");
+           
         }
     });
 }
@@ -43,6 +51,7 @@ function displayWithPromise(){
     })
     promise1.then(value => {
         console.log(value);
+        
     }, reason => {
         console.log(reason);
     });
@@ -54,8 +63,9 @@ function displayWithPromise(){
 $( document ).ready(function() {
   // Handler for .ready() called.
    $("#btnLoginSubmit").click(displayWithAjax);
+
    // $("#btnLoginSubmit").click(displayWithPromise);
-    $("#searchIcon").click()
+    //$("#searchIcon").click()
 });
 
 

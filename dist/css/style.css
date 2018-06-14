@@ -21,7 +21,7 @@ header h1 a {
 #header {
     position: relative;
     width: 30%;
-    height: 40%;
+    height: 250px;
     border: 1px solid grey;
     padding: 25px;
     margin: 25px;
@@ -130,6 +130,14 @@ header h1 a {
    
 }
 
+
+#errorMsg {
+    position: absolute;
+    display: inline-block;
+    top: 200px;
+    color: red;
+}
+
 #searchHeader {
     
 }
@@ -144,7 +152,7 @@ header h1 a {
 
 #searchHeader form #searchItem{
     width:70%;
-    height: 5%
+    height: 30px;
 } 
 
 #searchHeader form .ion-ios-search {
