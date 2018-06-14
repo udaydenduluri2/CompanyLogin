@@ -1,7 +1,9 @@
 
 import $ from 'jquery';
+import axios from 'axios';
+import cors from 'cors';
 
-function display() {
+function displayWithAjax() {
     var obj = {};
     obj.userName = $("#userName").val();
     obj.password = $("#password").val();
@@ -20,19 +22,39 @@ function display() {
             alert("error");
         }
     });
-    
-
-    
-//$.post( "http://localhost:49980/api/Authentication/ValidateUser", { "userName": "this.userName", "password": "this.password"} );
-     console.log(obj);
-
-
 }
+    
+function displayWithPromise(){
+    var promise1 = new Promise(function(resolve, reject) {
+          var obj = {};
+     obj.userName = $("#userName").val();
+     obj.password = $("#password").val();                       
+        axios.post("http://localhost:49980/api/Authentication/ValidateUser",  obj , {
+            headers: {
+                'content-Type': 'application/json;charset=UTF-8',
+              'Access-Control-Allow-Origin': 'localhost:8080',
+                'Access-Control-Allow-Credentials': 'true',
+                'Access-Control-Allow-Methods': 'DELETE, PUT, GET, POST, OPTIONS',
+                'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+                
+            }
+        });
+      resolve(obj); 
+    })
+    promise1.then(value => {
+        console.log(value);
+    }, reason => {
+        console.log(reason);
+    });
+}
+    
 
+    
 
 $( document ).ready(function() {
   // Handler for .ready() called.
-    $("#btnLoginSubmit").click(display);
+   $("#btnLoginSubmit").click(displayWithAjax);
+   // $("#btnLoginSubmit").click(displayWithPromise);
     $("#searchIcon").click()
 });
 
