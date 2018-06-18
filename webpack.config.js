@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   
-    entry: ['jquery', 'babel-polyfill', './src/authenticate.js'],
+    entry: ['jquery', 'babel-polyfill', './src/authenticate.js', './src/search.js'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/bundle.js'
