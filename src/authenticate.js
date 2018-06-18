@@ -1,7 +1,6 @@
-
+global._babelPolyfill = false;
 import $ from 'jquery';
-import axios from 'axios';
-import cors from 'cors';
+
 
 function displayWithAjax() {
     var obj = {};

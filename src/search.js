@@ -1,3 +1,4 @@
+global._babelPolyfill = false;
 import $ from 'jquery';
 //global.jQuery = require('jquery');
 //import  autocomplete from  'jquery-autocomplete';
